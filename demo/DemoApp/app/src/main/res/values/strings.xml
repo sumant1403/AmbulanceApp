@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DemoMap</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="firebase_path">raw-locations/</string>
+</resources>
