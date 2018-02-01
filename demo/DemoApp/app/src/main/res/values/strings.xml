@@ -2,4 +2,11 @@
     <string name="app_name">DemoMap</string>
     <string name="title_activity_maps">Map</string>
     <string name="firebase_path">raw-locations/</string>
+    <string name="firebase_request">request-amb</string>
+    <string name="gps_required">Gps not enabled.</string>
+    <string name="ok">OK</string>
+    <string name="enable">Enable</string>
+    <string name="auth_failed">Firebase authentication failed</string>
+    <string name="confirm_stop">Do you really want to disable location tracking?</string>
+
 </resources>

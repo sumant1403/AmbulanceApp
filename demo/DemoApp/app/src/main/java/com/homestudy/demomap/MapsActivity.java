@@ -1,21 +1,31 @@
 package com.homestudy.demomap;
 
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
-import android.net.Uri;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.ButtCap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -29,126 +39,55 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
-   CustomDialog.CustomDialogClickListener{
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private DatabaseReference mFirebaseTransportRef;
     private LatLng location;
-    private final int AMBULANCE_REQUEST=100;
+    public Marker previousMarker;
+    public Polyline polyline = null;
+    public List<LatLng> mLocationList = new ArrayList<>();
+    private boolean mIsStartPointAdded;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        showdialogTest();
+//        showdialogTest();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            ActivityCompat.requestPermissions(MapsActivity.this,
+                    new String[]{android.Manifest.permission.READ_PHONE_STATE},
+                    1);
+            return;
+        }
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        final String deviceId = telephonyManager.getDeviceId(1);
         String path = getString(R.string.firebase_path);
         mFirebaseTransportRef = FirebaseDatabase.getInstance().getReference(path);
 
         mFirebaseTransportRef.addChildEventListener(new ChildEventListener() {
-            public Polyline polyline = null;
-            public List<LatLng> mLocationList = new ArrayList<>();
 
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onChildAdded(DataSnapshot snapshot, String s) {
-/*
-                String key = "";
-//                key = getKeyForPrevCase(snapshot);
-//                key = (String) ((HashMap)snapshot.getValue()).keySet().toArray()[0];
-                Double lat = (Double) ((HashMap) snapshot.getValue()).get("lat");
-                Double lng = (Double) ((HashMap) snapshot.getValue()).get("lng");
-
-                LatLng newLocation = new LatLng(lat, lng);
-
-                mMap.addMarker(new MarkerOptions().position(newLocation));
-                if (polyline == null){
-                    PolylineOptions polylineOptions = new PolylineOptions();
-                    polylineOptions.add(newLocation);
-                    polylineOptions.color(Color.BLUE);
-                    polylineOptions.startCap(new ButtCap());
-                    polylineOptions.endCap(new ButtCap());
-                    polylineOptions.width(10);
-                    polyline = mMap.addPolyline(polylineOptions);
-
-                    Toast.makeText(getApplicationContext(), "start with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
-
-                    mLocationList.add(newLocation);
-                }
-                else {
-
-
-//                    mMap.clear();
-                    mLocationList.add(newLocation);
-//                    PolylineOptions polylineOptions = new PolylineOptions();
-//                    polylineOptions.addAll(mLocationList);
-//                    polylineOptions.color(getColor(R.color.colorPrimary));
-//                    polylineOptions.startCap(new ButtCap());
-//                    polylineOptions.endCap(new ButtCap());
-//                    polylineOptions.width(10);
-//                    mMap.addPolyline(polylineOptions);
-                    Toast.makeText(getApplicationContext(), "continued with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
-
-
-                }
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation, 13));
-*/
-
+                onDataChange(snapshot, deviceId, true);
+                mIsStartPointAdded = true;
             }
 
             @Override
             public void onChildChanged(DataSnapshot snapshot, String s) {
-                String key = "";
-//                key = getKeyForPrevCase(snapshot);
-//                key = (String) ((HashMap)snapshot.getValue()).keySet().toArray()[0];
-                Double lat = (Double) ((HashMap) snapshot.getValue()).get("lat");
-                Double lng = (Double) ((HashMap) snapshot.getValue()).get("lng");
-
-                LatLng newLocation = new LatLng(lat, lng);
-
-                mMap.addMarker(new MarkerOptions().position(newLocation));
-                if (polyline == null){
-                    PolylineOptions polylineOptions = new PolylineOptions();
-                    polylineOptions.add(newLocation);
-                    polylineOptions.color(Color.MAGENTA);
-                    polylineOptions.startCap(new ButtCap());
-                    polylineOptions.endCap(new ButtCap());
-                    polylineOptions.width(10);
-                    polyline = mMap.addPolyline(polylineOptions);
-
-                    Toast.makeText(getApplicationContext(), "start with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
-
-                    mLocationList.add(newLocation);
-                }
-                else {
-
-
-//                    mMap.clear();
-                    mLocationList.add(newLocation);
-                    polyline.setPoints(mLocationList);
-//                    PolylineOptions polylineOptions = new PolylineOptions();
-//                    polylineOptions.addAll(mLocationList);
-//                    polylineOptions.color(getColor(R.color.colorPrimary));
-//                    polylineOptions.startCap(new ButtCap());
-//                    polylineOptions.endCap(new ButtCap());
-//                    polylineOptions.width(10);
-//                    mMap.addPolyline(polylineOptions);
-                    Toast.makeText(getApplicationContext(), "continued with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
-
-
-                }
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation, 18));
-
+                onDataChange(snapshot, deviceId, false);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-
+                Toast.makeText(getApplicationContext(), "data removed : " + dataSnapshot.getKey() , Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -161,51 +100,87 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-//        mFirebaseTransportRef.addValueEventListener(new ValueEventListener() {
-//
-//            @Override
-//            public void onDataChange(DataSnapshot snapshot) {
-//                // This method is called once with the initial value and again
-//                // whenever data at this location is updated.
-//                String key = "";
-////                key = getKeyForPrevCase(snapshot);
-//                key = (String) ((HashMap)snapshot.getValue()).keySet().toArray()[0];
-//                Double lat = (Double) ((HashMap) ((HashMap) snapshot.getValue()).get("101")).get("lat");
-//                Double lng = (Double) ((HashMap) ((HashMap) snapshot.getValue()).get("101")).get("lng");
-//
-//                location = new LatLng(lat, lng);
-//
-//                MarkerOptions markerOptions = new MarkerOptions();
-//                markerOptions.position(location);
-//                markerOptions.title("location");
-//                mMap.addMarker(markerOptions);
-//                mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-//                Log.d("Change", "Value is: " + key);
-//            }
-//
-//            private String getKeyForPrevCase(DataSnapshot snapshot) {
-//                String value = "";
-//                Map.Entry entry = (Map.Entry) ((HashMap) snapshot.getValue(false)).entrySet().toArray()[0];
-//                Double lat = (Double) ((HashMap) ((List) entry.getValue()).get(7)).get("lat");
-//                Double lng = (Double) ((HashMap) ((List) entry.getValue()).get(7)).get("lng");
-//                String key = (String) entry.getKey();
-//
-//                location = new LatLng(lat, lng);
-//                return key;
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.w("Failed", "Failed to read value.", error.toException());
-//            }
-//        });
     }
 
-    private void showdialogTest() {
-        CustomDialog customDialog=new CustomDialog(this,AMBULANCE_REQUEST);
-        customDialog.showCustomDialog("Alert","Accept Ambulance" ,"ACCEPT",
-                "CACEL",this);
+//    private void showdialogTest() {
+//        CustomDialog customDialog=new CustomDialog(this,AMBULANCE_REQUEST);
+//        customDialog.showCustomDialog("Alert","Accept Ambulance" ,"ACCEPT",
+//                "CACEL",MapsActivity.this);
+//    }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+
+    private void onDataChange(DataSnapshot snapshot, String deviceId, boolean isStartPoint) {
+        if (snapshot.getKey().equals(deviceId)) {
+            Double lat = (Double) ((HashMap) snapshot.getValue()).get("lat");
+            Double lng = (Double) ((HashMap) snapshot.getValue()).get("lng");
+
+            LatLng newLocation = new LatLng(lat, lng);
+
+            if (!mIsStartPointAdded) {
+                if (previousMarker != null) {
+                    previousMarker.remove();
+                }
+            }
+            else {
+                mIsStartPointAdded = false;
+            }
+            previousMarker = mMap.addMarker(new MarkerOptions().anchor(0.5f, 0.5f).icon(getIcon(isStartPoint)).position(newLocation));
+            if (polyline == null) {
+                PolylineOptions polylineOptions = new PolylineOptions();
+                polylineOptions.add(newLocation);
+                polylineOptions.color(Color.MAGENTA);
+                polylineOptions.startCap(new ButtCap());
+                polylineOptions.endCap(new ButtCap());
+                polylineOptions.width(10);
+                polyline = mMap.addPolyline(polylineOptions);
+
+//                    Toast.makeText(getApplicationContext(), "start with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
+
+                mLocationList.add(newLocation);
+            } else {
+
+
+//                    mMap.clear();
+                mLocationList.add(newLocation);
+                polyline.setPoints(mLocationList);
+//                    PolylineOptions polylineOptions = new PolylineOptions();
+//                    polylineOptions.addAll(mLocationList);
+//                    polylineOptions.color(getColor(R.color.colorPrimary));
+//                    polylineOptions.startCap(new ButtCap());
+//                    polylineOptions.endCap(new ButtCap());
+//                    polylineOptions.width(10);
+//                    mMap.addPolyline(polylineOptions);
+//                    Toast.makeText(getApplicationContext(), "continued with : " + mLocationList.size() , Toast.LENGTH_SHORT).show();
+
+
+            }
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLocation, 18));
+        }
+    }
+
+    @NonNull
+    private BitmapDescriptor getIcon(boolean isStartPoint) {
+        if (isStartPoint){
+            int d = 50;
+            Bitmap bm = Bitmap.createBitmap(d, d, Bitmap.Config.ARGB_8888);
+            Canvas c = new Canvas(bm);
+            Paint p = new Paint();
+            p.setColor(getResources().getColor(R.color.black));
+            c.drawCircle(d/2, d/2, d/2, p);
+
+            // generate BitmapDescriptor from circle Bitmap
+            BitmapDescriptor bmD = BitmapDescriptorFactory.fromBitmap(bm);
+            return bmD;
+        }
+        return bitmapDescriptorFromVector(MapsActivity.this, R.drawable.ic_first_aid);
     }
 
 
@@ -223,26 +198,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(52.43732, 10.81098);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-
-    @Override
-    public void onPositiveButtonClicked(DialogInterface dialog, int requestCode) {
-        if (requestCode==AMBULANCE_REQUEST){
-            Toast.makeText(this,"Request ACCEPT",Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("http://maps.google.com/maps?daddr=20.5666,45.345"));
-            startActivity(intent);
-        }
-    }
-
-    @Override
-    public void onNegativeButtonClicked(DialogInterface dialog, int requestCode) {
-        if (requestCode==AMBULANCE_REQUEST){
-            Toast.makeText(this,"Request CANCELLED",Toast.LENGTH_LONG).show();
-        }
-    }
 }

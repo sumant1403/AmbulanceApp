@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion '27.0.1'
 
     defaultConfig {
         applicationId "com.homestudy.demomap"
@@ -19,12 +19,18 @@ android {
         }
     }
 }
-
+ext {
+    support = '23.2.0'
+    playServices = '10.2.4'
+}
 dependencies {
-    compile 'com.google.firebase:firebase-database:11.8.0'
+    compile "com.google.firebase:firebase-database:$playServices"
+    testCompile 'junit:junit:4.12'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    compile "com.android.support:appcompat-v7:+"
+    compile "com.android.support:design:+"
+    compile "com.google.android.gms:play-services-location:$playServices"
+    implementation "com.google.android.gms:play-services-maps:$playServices"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
