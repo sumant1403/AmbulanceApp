@@ -371,6 +371,7 @@
     <string name="enter_transport_id">Enter transport ID</string>
     <string name="firebase_database_url" translatable="false">https://transport-tracker-demo-6ccbf.firebaseio.com</string>
     <string name="firebase_path" translatable="false">raw-locations/</string>
+    <string name="firebase_request">request-amb</string>
     <string name="gcm_defaultSenderId" translatable="false">355723311800</string>
     <string name="google_api_key" translatable="false">AIzaSyDrZE85WAAf1g1FQNJXbPIlah-E3wZ3zXk</string>
     <string name="google_app_id" translatable="false">1:355723311800:android:b5599a8062cdeaf2</string>

@@ -26,6 +26,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
@@ -47,12 +48,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.transporttracker.entities.MyLatLng;
 
 public class TrackerActivity extends AppCompatActivity implements CustomDialog.CustomDialogClickListener {
 
@@ -72,7 +73,7 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
     private final int AMBULANCE_REQUEST = 100;
     private DatabaseReference mRequestReference;
     private String mKey;
-    private LatLng mLocation;
+    private MyLatLng mLocation;
     private CustomDialog mCustomDialog;
     private String mTransportId;
 
@@ -134,7 +135,7 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
             private void showdialogTest(DataSnapshot dataSnapshot) {
                 mCustomDialog = new CustomDialog(TrackerActivity.this, AMBULANCE_REQUEST);
                 mKey = dataSnapshot.getKey();
-                mLocation = new LatLng(Double.parseDouble(dataSnapshot.child("lat").getValue().toString()), Double.parseDouble(dataSnapshot.child("lng").getValue().toString()));
+                mLocation = new MyLatLng(Double.parseDouble(dataSnapshot.child("lat").getValue().toString()), Double.parseDouble(dataSnapshot.child("lng").getValue().toString()));
                 mCustomDialog.showCustomDialog("Alert", "Accept Ambulance", "ACCEPT",
                         "CANCEL", TrackerActivity.this);
             }
@@ -143,7 +144,7 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
 
             private void showDialogForAndroid(final DataSnapshot dataSnapshot) {
                 mKey = dataSnapshot.getKey();
-                mLocation = new LatLng(Double.parseDouble(dataSnapshot.child("lat").getValue().toString()), Double.parseDouble(dataSnapshot.child("lng").getValue().toString()));
+                mLocation = new MyLatLng(Double.parseDouble(dataSnapshot.child("lat").getValue().toString()), Double.parseDouble(dataSnapshot.child("lng").getValue().toString()));
                 mTransportId = dataSnapshot.child("imei").getValue().toString();
                 android.app.AlertDialog.Builder builder;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -455,7 +456,7 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
             mRequestReference.child(mKey).removeValue();
             checkInputFields(mTransportId);
             Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://maps.google.com/maps?mode=driving&daddr=" + mLocation.latitude + "," + mLocation.longitude));
+                    Uri.parse("http://maps.google.com/maps?mode=driving&daddr=" + mLocation.getLatitude() + "," + mLocation.getLongitude()));
             startActivity(intent);
         }
 
