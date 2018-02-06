@@ -75,18 +75,37 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#3338#3470#0" expanded="true" />
                 <element signature="e#3469#3470#0" expanded="true" />
+                <element signature="e#3718#3743#0" expanded="true" />
+                <element signature="e#3806#3838#0" expanded="true" />
+                <element signature="e#3885#3910#0" expanded="true" />
+                <element signature="e#3960#3988#0" expanded="true" />
+                <element signature="e#4277#4294#0" expanded="true" />
+                <element signature="e#4636#4674#0" expanded="true" />
+                <element signature="e#4712#4743#0" expanded="true" />
+                <element signature="e#4784#4818#0" expanded="true" />
                 <element signature="e#7030#7294#0" expanded="true" />
                 <element signature="e#7293#7294#0" expanded="true" />
                 <element signature="e#7360#7586#0" expanded="true" />
                 <element signature="e#7585#7586#0" expanded="true" />
+                <element signature="e#9162#9179#0" expanded="true" />
                 <element signature="e#9770#9975#0" expanded="true" />
+                <element signature="e#9927#9953#0" expanded="true" />
                 <element signature="e#9974#9975#0" expanded="true" />
+                <element signature="e#10791#10814#0" expanded="true" />
+                <element signature="e#10980#11012#0" expanded="true" />
+                <element signature="e#11123#11148#0" expanded="true" />
+                <element signature="e#11217#11245#0" expanded="true" />
                 <element signature="e#15004#15294#0" expanded="true" />
                 <element signature="e#15293#15294#0" expanded="true" />
+                <element signature="e#15485#15517#0" expanded="true" />
                 <element signature="e#15637#16143#0" expanded="true" />
                 <element signature="e#16142#16143#0" expanded="true" />
+                <element signature="e#16483#16531#0" expanded="true" />
+                <element signature="e#16612#16627#0" expanded="true" />
                 <element signature="e#16629#17040#0" expanded="true" />
                 <element signature="e#17039#17040#0" expanded="true" />
+                <element signature="e#17811#17868#0" expanded="true" />
+                <element signature="e#17925#17940#0" expanded="true" />
                 <element signature="e#17942#18186#0" expanded="true" />
                 <element signature="e#18185#18186#0" expanded="true" />
               </folding>
@@ -97,8 +116,8 @@
       <file leaf-file-name="MyLatLng.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/transporttracker/entities/MyLatLng.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="225">
+              <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="e#305#306#0" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
@@ -116,19 +135,6 @@
               <caret line="310" column="51" lean-forward="false" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="51" />
               <folding>
                 <element signature="e#0#624#0" expanded="true" />
-                <element signature="e#5244#5261#0" expanded="false" />
-                <element signature="e#5965#5984#0" expanded="false" />
-                <element signature="e#6416#6441#0" expanded="false" />
-                <element signature="e#6498#6523#0" expanded="false" />
-                <element signature="e#6573#6601#0" expanded="false" />
-                <element signature="e#6770#6791#0" expanded="false" />
-                <element signature="e#7942#7962#0" expanded="false" />
-                <element signature="e#8964#8996#0" expanded="false" />
-                <element signature="e#9114#9147#0" expanded="false" />
-                <element signature="e#15504#15521#0" expanded="false" />
-                <element signature="e#15524#15545#0" expanded="false" />
-                <element signature="e#16070#16098#0" expanded="false" />
-                <element signature="e#16703#16729#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1997,114 +2003,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transporttracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -2222,7 +2120,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517938738117" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517939363619" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2270,7 +2168,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517938738118" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517939363619" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2453,7 +2351,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517938738119" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517939363621" />
       </method>
     </configuration>
     <list size="1">
@@ -2496,7 +2394,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2514,7 +2411,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19170243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19170243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2770,19 +2667,6 @@
           <caret line="310" column="51" lean-forward="false" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="51" />
           <folding>
             <element signature="e#0#624#0" expanded="true" />
-            <element signature="e#5244#5261#0" expanded="false" />
-            <element signature="e#5965#5984#0" expanded="false" />
-            <element signature="e#6416#6441#0" expanded="false" />
-            <element signature="e#6498#6523#0" expanded="false" />
-            <element signature="e#6573#6601#0" expanded="false" />
-            <element signature="e#6770#6791#0" expanded="false" />
-            <element signature="e#7942#7962#0" expanded="false" />
-            <element signature="e#8964#8996#0" expanded="false" />
-            <element signature="e#9114#9147#0" expanded="false" />
-            <element signature="e#15504#15521#0" expanded="false" />
-            <element signature="e#15524#15545#0" expanded="false" />
-            <element signature="e#16070#16098#0" expanded="false" />
-            <element signature="e#16703#16729#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2795,18 +2679,37 @@
             <element signature="imports" expanded="true" />
             <element signature="e#3338#3470#0" expanded="true" />
             <element signature="e#3469#3470#0" expanded="true" />
+            <element signature="e#3718#3743#0" expanded="true" />
+            <element signature="e#3806#3838#0" expanded="true" />
+            <element signature="e#3885#3910#0" expanded="true" />
+            <element signature="e#3960#3988#0" expanded="true" />
+            <element signature="e#4277#4294#0" expanded="true" />
+            <element signature="e#4636#4674#0" expanded="true" />
+            <element signature="e#4712#4743#0" expanded="true" />
+            <element signature="e#4784#4818#0" expanded="true" />
             <element signature="e#7030#7294#0" expanded="true" />
             <element signature="e#7293#7294#0" expanded="true" />
             <element signature="e#7360#7586#0" expanded="true" />
             <element signature="e#7585#7586#0" expanded="true" />
+            <element signature="e#9162#9179#0" expanded="true" />
             <element signature="e#9770#9975#0" expanded="true" />
+            <element signature="e#9927#9953#0" expanded="true" />
             <element signature="e#9974#9975#0" expanded="true" />
+            <element signature="e#10791#10814#0" expanded="true" />
+            <element signature="e#10980#11012#0" expanded="true" />
+            <element signature="e#11123#11148#0" expanded="true" />
+            <element signature="e#11217#11245#0" expanded="true" />
             <element signature="e#15004#15294#0" expanded="true" />
             <element signature="e#15293#15294#0" expanded="true" />
+            <element signature="e#15485#15517#0" expanded="true" />
             <element signature="e#15637#16143#0" expanded="true" />
             <element signature="e#16142#16143#0" expanded="true" />
+            <element signature="e#16483#16531#0" expanded="true" />
+            <element signature="e#16612#16627#0" expanded="true" />
             <element signature="e#16629#17040#0" expanded="true" />
             <element signature="e#17039#17040#0" expanded="true" />
+            <element signature="e#17811#17868#0" expanded="true" />
+            <element signature="e#17925#17940#0" expanded="true" />
             <element signature="e#17942#18186#0" expanded="true" />
             <element signature="e#18185#18186#0" expanded="true" />
           </folding>
@@ -2815,8 +2718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/transporttracker/entities/MyLatLng.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
             <element signature="e#305#306#0" expanded="true" />
             <element signature="e#337#338#0" expanded="true" />
