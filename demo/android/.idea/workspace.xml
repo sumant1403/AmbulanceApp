@@ -61,7 +61,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +74,11 @@
             <state relative-caret-position="6045">
               <caret line="458" column="92" lean-forward="false" selection-start-line="458" selection-start-column="92" selection-end-line="458" selection-end-column="92" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#624#0" expanded="false" />
+                <element signature="e#3407#3408#0" expanded="false" />
+                <element signature="e#3459#3460#0" expanded="false" />
+                <element signature="e#14248#14249#0" expanded="false" />
+                <element signature="e#14315#14316#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="18" />
+              <caret line="14" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -104,7 +110,9 @@
             <state relative-caret-position="3840">
               <caret line="310" column="51" lean-forward="false" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="51" />
               <folding>
-                <element signature="e#0#624#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#5811#5812#0" expanded="false" />
+                <element signature="e#5838#5839#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2080,7 +2088,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011141798" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011354891" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2128,7 +2136,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011141798" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011354891" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2290,7 +2298,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011141799" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518011354892" />
       </method>
     </configuration>
     <list size="1">
@@ -2587,7 +2595,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2628,7 +2638,9 @@
         <state relative-caret-position="3840">
           <caret line="310" column="51" lean-forward="false" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="51" />
           <folding>
-            <element signature="e#0#624#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5811#5812#0" expanded="false" />
+            <element signature="e#5838#5839#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2638,7 +2650,11 @@
         <state relative-caret-position="6045">
           <caret line="458" column="92" lean-forward="false" selection-start-line="458" selection-start-column="92" selection-end-line="458" selection-end-column="92" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#624#0" expanded="false" />
+            <element signature="e#3407#3408#0" expanded="false" />
+            <element signature="e#3459#3460#0" expanded="false" />
+            <element signature="e#14248#14249#0" expanded="false" />
+            <element signature="e#14315#14316#0" expanded="false" />
           </folding>
         </state>
       </provider>
