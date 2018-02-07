@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
@@ -67,7 +68,7 @@ public class MainActivity extends Activity implements com.google.android.gms.loc
                 return;
             }
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
-                    request, (com.google.android.gms.location.LocationListener) MainActivity.this);
+                    request, (LocationListener) MainActivity.this);
         }
 
         @Override
