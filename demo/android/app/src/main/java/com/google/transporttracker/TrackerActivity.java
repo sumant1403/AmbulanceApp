@@ -101,18 +101,19 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
         String email = mPrefs.getString(getString(R.string.email), "");
         String password = mPrefs.getString(getString(R.string.password), "");
 
-        mTransportIdEditText.setText(transportID);
+//        mTransportIdEditText.setText(transportID);
         mEmailEditText.setText(email);
         mPasswordEditText.setText(password);
+        mTransportIdEditText.setEnabled(false);
 
         if (isServiceRunning(TrackerService.class)) {
             // If service already running, simply update UI.
             setTrackingStatus(R.string.tracking);
-        } else if (transportID.length() > 0 && email.length() > 0 && password.length() > 0) {
+        } else if (mTransportIdEditText.getText().length() > 0 && mEmailEditText.getText().length() > 0 && mPasswordEditText.getText().length() > 0) {
             // Inputs have previously been stored, start validation.
             checkLocationPermission();
         } else {
-            // First time running - check for inputs pre-populated from build.
+//            // First time running - check for inputs pre-populated from build.
             mTransportIdEditText.setText(getString(R.string.build_transport_id));
             mEmailEditText.setText(getString(R.string.build_email));
             mPasswordEditText.setText(getString(R.string.build_password));
@@ -252,13 +253,16 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
      * @param mTransportId
      */
     private void checkInputFields(String mTransportId) {
-        if (mTransportIdEditText.length() == 0 || mEmailEditText.length() == 0 ||
-                mPasswordEditText.length() == 0) {
+        if ((mTransportId.length() == 0 && mTransportIdEditText.length() == 0 || mEmailEditText.length() == 0 ||
+                mPasswordEditText.length() == 0)) {
             Toast.makeText(TrackerActivity.this, R.string.missing_inputs, Toast.LENGTH_SHORT).show();
         } else {
             // Store values.
+//            mTransportIdEditText.setEnabled(true);
+            mTransportIdEditText.setText(getTransportID(mTransportId));
+//            mTransportIdEditText.setEnabled(false);
             SharedPreferences.Editor editor = mPrefs.edit();
-            editor.putString(getString(R.string.transport_id), mTransportId == "" ? mTransportIdEditText.getText().toString() : mTransportId);
+            editor.putString(getString(R.string.transport_id), getTransportID(mTransportId));
             editor.putString(getString(R.string.email), mEmailEditText.getText().toString());
             editor.putString(getString(R.string.password), mPasswordEditText.getText().toString());
             editor.apply();
@@ -266,6 +270,10 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
             checkLocationPermission();
             mSwitch.setEnabled(true);
         }
+    }
+
+    private String getTransportID(String mTransportId) {
+        return mTransportId == "" ? mTransportIdEditText.getText().toString() : mTransportId;
     }
 
     /**
@@ -369,7 +377,9 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         mSwitch.setChecked(false);
-                        mTransportIdEditText.setEnabled(true);
+//                        mTransportIdEditText.setEnabled(true);
+                        mTransportIdEditText.setText("");
+                        mTransportIdEditText.setEnabled(false);
                         mEmailEditText.setEnabled(true);
                         mPasswordEditText.setEnabled(true);
                         mStartButton.setVisibility(View.VISIBLE);
