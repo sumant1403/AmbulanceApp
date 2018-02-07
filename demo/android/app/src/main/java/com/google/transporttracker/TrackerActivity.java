@@ -107,6 +107,7 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
         mTransportIdEditText.setEnabled(false);
 
         if (isServiceRunning(TrackerService.class)) {
+            mTransportIdEditText.setText(transportID);
             // If service already running, simply update UI.
             setTrackingStatus(R.string.tracking);
         } else if (mTransportIdEditText.getText().length() > 0 && mEmailEditText.getText().length() > 0 && mPasswordEditText.getText().length() > 0) {
@@ -129,6 +130,8 @@ public class TrackerActivity extends AppCompatActivity implements CustomDialog.C
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Toast.makeText(getApplicationContext(), "added child with key : " + dataSnapshot.getKey(), Toast.LENGTH_SHORT).show();
+                if (isServiceRunning(TrackerService.class))
+                    return;
                 showDialogForAndroid(dataSnapshot);
 //                showdialogTest(dataSnapshot);
             }
