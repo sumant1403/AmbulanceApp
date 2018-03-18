@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "355723311800",
-    "firebase_url": "https://transport-tracker-demo-6ccbf.firebaseio.com",
-    "project_id": "transport-tracker-demo-6ccbf",
-    "storage_bucket": "transport-tracker-demo-6ccbf.appspot.com"
+    "project_number": "677812127098",
+    "firebase_url": "https://amulance-ee7ff.firebaseio.com",
+    "project_id": "amulance-ee7ff",
+    "storage_bucket": "amulance-ee7ff.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:355723311800:android:b5599a8062cdeaf2",
+        "mobilesdk_app_id": "1:677812127098:android:b5599a8062cdeaf2",
         "android_client_info": {
           "package_name": "com.google.transporttracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "355723311800-6glv9gicsm1403q5ac6413aeciksam78.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.google.transporttracker",
-            "certificate_hash": "49aa5f9d8bdd8f954493e51d9c37bc9be1903cd9"
-          }
-        },
-        {
-          "client_id": "355723311800-te01qlml26ddidcpohq5aiva5li79v0i.apps.googleusercontent.com",
+          "client_id": "677812127098-jm87b4ogsd6k22l26pspr9hv3hr68okq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrZE85WAAf1g1FQNJXbPIlah-E3wZ3zXk"
+          "current_key": "AIzaSyBA8omZTaV438VvHZyg0vXp-Le9hnznI_o"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "355723311800-te01qlml26ddidcpohq5aiva5li79v0i.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

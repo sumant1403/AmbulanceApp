@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Transport Tracker</string>
-    <string name="title_activity_main">Transport Tracker</string>
+    <string name="app_name">Ambulance Service</string>
+    <string name="title_activity_main">Ambulance Tracking</string>
     <string name="start_tracking">Start Tracking</string>
     <string name="stop_tracking">Stop Tracking</string>
     <string name="enter_transport_id">Enter transport ID</string>
